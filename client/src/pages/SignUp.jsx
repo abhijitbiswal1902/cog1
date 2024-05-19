@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-// import OAuth from '../components/OAuth';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -49,88 +48,93 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
-        <h1 className="text-3xl font-semibold text-center text-gray-800">
-          Sign Up
-        </h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <input
-              type="text"
-              placeholder="Username"
-              id="username"
-              className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              id="password"
-              className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center">
+    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+      <video autoPlay muted loop style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
+        <source src="signinbg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+          <h1 className="text-3xl font-semibold text-center text-gray-800">
+            Sign Up
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
               <input
-                type="radio"
-                value="org"
-                checked={formData.role === 'org'}
-                onChange={handleOptionChange}
-                className="text-green-600 focus:ring focus:ring-green-300"
+                type="text"
+                placeholder="Username"
+                id="username"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
+                onChange={handleChange}
               />
-              <span className="ml-2 text-gray-700">ORG</span>
-            </label>
-            <label className="flex items-center">
+            </div>
+            <div>
               <input
-                type="radio"
-                value="gamer"
-                checked={formData.role === 'gamer'}
-                onChange={handleOptionChange}
-                className="text-green-600 focus:ring focus:ring-green-300"
+                type="email"
+                placeholder="Email"
+                id="email"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
+                onChange={handleChange}
               />
-              <span className="ml-2 text-gray-700">GAMER</span>
-            </label>
-            <label className="flex items-center">
+            </div>
+            <div>
               <input
-                type="radio"
-                value="host"
-                checked={formData.role === 'host'}
-                onChange={handleOptionChange}
-                className="text-green-600 focus:ring focus:ring-green-300"
+                type="password"
+                placeholder="Password"
+                id="password"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:ring focus:ring-green-300 focus:outline-none"
+                onChange={handleChange}
               />
-              <span className="ml-2 text-gray-700">HOST</span>
-            </label>
+            </div>
+            <div className="flex items-center space-x-4">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="org"
+                  checked={formData.role === 'org'}
+                  onChange={handleOptionChange}
+                  className="text-green-600 focus:ring focus:ring-green-300"
+                />
+                <span className="ml-2 text-gray-700">ORG</span>
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="gamer"
+                  checked={formData.role === 'gamer'}
+                  onChange={handleOptionChange}
+                  className="text-green-600 focus:ring focus:ring-green-300"
+                />
+                <span className="ml-2 text-gray-700">GAMER</span>
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="host"
+                  checked={formData.role === 'host'}
+                  onChange={handleOptionChange}
+                  className="text-green-600 focus:ring focus:ring-green-300"
+                />
+                <span className="ml-2 text-gray-700">HOST</span>
+              </label>
+            </div>
+            <button
+              disabled={loading}
+              className="w-full px-4 py-2 text-white bg-green-600 rounded-lg hover:bg-green-500 focus:ring focus:ring-green-300 focus:outline-none disabled:opacity-50"
+            >
+              {loading ? 'Loading...' : `Sign Up as ${formData.role}`}
+            </button>
+          </form>
+          <div className="flex justify-center gap-2 mt-4 text-gray-700">
+            <p>Have an account?</p>
+            <Link to="/sign-in" className="text-blue-500 hover:underline">
+              Sign in
+            </Link>
           </div>
-          <button
-            disabled={loading}
-            className="w-full px-4 py-2 text-white bg-green-600 rounded-lg hover:bg-green-500 focus:ring focus:ring-green-300 focus:outline-none disabled:opacity-50"
-          >
-            {loading ? 'Loading...' : `Sign Up as ${formData.role}`}
-          </button>
-          {/* <OAuth /> */}
-        </form>
-        <div className="flex justify-center gap-2 mt-4 text-gray-700">
-          <p>Have an account?</p>
-          <Link to="/sign-in" className="text-blue-500 hover:underline">
-            Sign in
-          </Link>
+          {error && (
+            <p className="mt-4 text-center text-red-600">Something went wrong!</p>
+          )}
         </div>
-        {error && (
-          <p className="mt-4 text-center text-red-600">Something went wrong!</p>
-        )}
       </div>
     </div>
   )

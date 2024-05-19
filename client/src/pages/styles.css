@@ -1,0 +1,269 @@
+/* Reset styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    /* top: 100px; */
+    max-width: 90%; /* Adjusted for smaller screens */
+    margin: 0 auto;
+    padding: 20px;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.search-bar {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Content */
+.content {
+    margin-top: 390px;
+    display: flex;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-card {
+    margin-bottom: 1150px;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: 100%; /* Adjusted for smaller screens */
+}
+
+.profile-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feed {
+    flex-grow: 1;
+}
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comments {
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: calc(100% - 110px);
+}
+
+.add-comment-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-comment-btn:hover {
+    background-color: #555;
+}
+
+/* Right side */
+.rightside {
+    margin-bottom: 1000px;
+    flex-basis: 100%; 
+    min-width: 100px;/* Adjusted for smaller screens */
+    max-width: 300px;
+}
+
+.news-column {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Reduced margin for smaller screens */
+    height: 25%;
+}
+
+.advertisement {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Media Query for MacBook Air 13-inch */
+@media only screen and (max-width: 1440px) {
+    .container {
+        max-width: 90%; /* Adjusted for smaller screens */
+    }
+
+    .profile-card {
+        flex-basis: 100%; /* Adjusted for smaller screens */
+    }
+
+    .rightside {
+        flex-basis: 100%; /* Adjusted for smaller screens */
+    }
+}
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.search-bar {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Content */
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: 250px;
+}
+
+.profile-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feed {
+    flex-grow: 1;
+    
+    
+}
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius:10px;
+}
+#org{
+    display: flex;
+    width: 50%;
+    
+}
+#rightorg{
+    flex-basis: 100%; 
+    min-width: 100px;/* Adjusted for smaller screens */
+    max-width: 300px;
+}
